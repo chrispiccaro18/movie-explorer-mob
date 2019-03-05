@@ -1,19 +1,8 @@
+import { makeMovieCard, getYear } from '../src/list-component.js';
+
 const test = QUnit.test;
 
 QUnit.module('Card template');
-
-function makeMovieCard(movie) {
-    const html = /*html*/`
-        <li>
-            <h2>${movie.title}</h2>
-            <img src="https://image.tmdb.org/t/p/original${movie.poster_path}">
-            <div>${getYear(movie.release_date)}</div>
-        </li>
-    `;
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
 
 test('make movie card', function(assert) {
     // arrange
@@ -49,12 +38,6 @@ test('make movie card', function(assert) {
     // assert
     assert.htmlEqual(result, expected);
 });
-
-function getYear(date) {
-    // Splits the date at the dashes and returns each number as a string in a new array
-    const fullDate = date.split('-');
-    return fullDate[0];
-}
 
 test('return year from release date', assert => {
 

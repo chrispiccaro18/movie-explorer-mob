@@ -44,3 +44,24 @@ test('write page to existing query', assert => {
     // assert
     assert.equal(query, 'searchTerm=star+wars&page=3');
 }); 
+
+function readFromQuery(query) {
+    const searchParams = new URLSearchParams(query);
+    const queryOptions = {
+        searchTerm: searchParams.get('searchTerm'),
+        page: Number(searchParams.get('page'))
+    };
+    return queryOptions;
+}
+test('write options from query', assert => {
+    // arrange
+    const query = 'searchTerm=star+wars&page=3';
+    const expected = {
+        searchTerm: 'star wars',
+        page: 3
+    };
+    // act
+    const result = readFromQuery(query);
+    // assert
+    assert.deepEqual(result, expected);
+});

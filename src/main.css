@@ -1,18 +1,19 @@
-body {
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-    font-family: 'Fascinate', cursive;
-}
-
 * {
     box-sizing: border-box;
 }
 body {
     background-color: #172A3A;
-    
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    font-family: 'Fascinate', cursive;
 }
 header {
     display: flex;
     align-items: center;
+    color: silver
+}
+
+body section {
+    color: silver;
 }
 
 h1 {
@@ -52,4 +53,8 @@ li img {
 
 li:hover {
     background: gray;
+}
+
+#form {
+    text-align: right;
 }

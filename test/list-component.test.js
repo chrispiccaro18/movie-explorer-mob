@@ -6,8 +6,8 @@ function makeMovieCard(movie) {
     const html = /*html*/`
         <li>
             <h2>${movie.title}</h2>
-            <img src="https://image.tmdb.org/t/p/original/btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
-            <div>1977</div>
+            <img src="https://image.tmdb.org/t/p/original${movie.poster_path}">
+            <div>${getYear(movie.release_date)}</div>
         </li>
     `;
     const template = document.createElement('template');

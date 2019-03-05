@@ -5,6 +5,7 @@ body {
     background-color: #172A3A;
     font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
     font-family: 'Fascinate', cursive;
+    background-image: url(http://www.astroeder.com/rimg/92/356_1239_609a3cd2_ic1805nb_ederL.jpg);
 }
 header {
     display: flex;

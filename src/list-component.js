@@ -16,3 +16,11 @@ export function getYear(date) {
     const fullDate = date.split('-');
     return fullDate[0];
 }
+const movieList = document.getElementById('movie-list');
+
+export default function loadMovieList(movies) {
+    movies.forEach(movie => {
+        const dom = makeMovieCard(movie);
+        movieList.appendChild(dom);
+    });
+}

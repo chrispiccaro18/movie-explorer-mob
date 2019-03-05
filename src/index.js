@@ -1,2 +1,3 @@
 import movieArray from '../data/movie-array.js';
-console.log(movieArray);
+import loadMovieList from './list-component.js';
+loadMovieList(movieArray);

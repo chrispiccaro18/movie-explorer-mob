@@ -23,10 +23,8 @@ test('return empty string if no search term', assert => {
         searchTerm: '',
         page: 3
     };
-
     //act
     const result = makeSearchMovieUrl(queryOptions);
     //assert
     assert.equal(result, expected);
-
 });

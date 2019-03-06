@@ -5,19 +5,21 @@ import { readFromQuery } from './hash-query.js';
 import makeSearchMovieUrl from './make-search-movie-url.js';
 // loadMovieList(movieArray);
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', loadQuery); 
+
+loadQuery();
+
+function loadQuery() {
     const existingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(existingQuery);
     updateSearchBar(queryOptions.searchTerm);
     const url = makeSearchMovieUrl(queryOptions);
-
     if(!url) {
         return;
     }
-
     fetch(url)
         .then(response => response.json())
-        .then(result => { 
+        .then(result => {
             loadMovieList(result.results);
             const pagingInfo = {
                 currentPage: result.page,
@@ -25,4 +27,4 @@ window.addEventListener('hashchange', () => {
             };
             updatePagingInfo(pagingInfo);
         });
-}); 
+}

@@ -15,3 +15,18 @@ test('includes query and page', assert => {
     // assert
     assert.equal(result, expected);
 });
+
+test('return empty string if no search term', assert => {
+    //arrange
+    const expected = '';
+    const queryOptions = {
+        searchTerm: '',
+        page: 3
+    };
+
+    //act
+    const result = makeSearchMovieUrl(queryOptions);
+    //assert
+    assert.equal(result, expected);
+
+});

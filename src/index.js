@@ -10,6 +10,11 @@ window.addEventListener('hashchange', () => {
     const queryOptions = readFromQuery(existingQuery);
     updateSearchBar(queryOptions.searchTerm);
     const url = makeSearchMovieUrl(queryOptions);
+
+    if(!url) {
+        return;
+    }
+
     fetch(url)
         .then(response => response.json())
         .then(result => { 

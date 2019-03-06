@@ -1,6 +1,6 @@
 import loadMovieList from './list-component.js';
 import { updateSearchBar } from './search-component.js';
-import './paging-component.js';
+import { updatePagingInfo } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeSearchMovieUrl from './make-search-movie-url.js';
 // loadMovieList(movieArray);
@@ -12,8 +12,12 @@ window.addEventListener('hashchange', () => {
     const url = makeSearchMovieUrl(queryOptions);
     fetch(url)
         .then(response => response.json())
-        .then(result => result.results)
-        .then(movieList => {
-            loadMovieList(movieList);
+        .then(result => { 
+            loadMovieList(result.results);
+            const pagingInfo = {
+                currentPage: result.page,
+                totalPages: result.total_pages
+            };
+            updatePagingInfo(pagingInfo);
         });
 }); 

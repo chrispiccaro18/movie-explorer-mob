@@ -1,4 +1,3 @@
-import movieArray from '../data/movie-array.js';
 import loadMovieList from './list-component.js';
 import { updateSearchBar } from './search-component.js';
 import './paging-component.js';

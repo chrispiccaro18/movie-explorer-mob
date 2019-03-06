@@ -3,7 +3,10 @@ import { updateSearchBar } from './search-component.js';
 import { updatePagingInfo } from './paging-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeSearchMovieUrl from './make-search-movie-url.js';
-// loadMovieList(movieArray);
+
+const prompt = document.getElementById('prompt');
+const movieContainer = document.getElementById('movie-container');
+
 
 window.addEventListener('hashchange', loadQuery); 
 
@@ -15,8 +18,14 @@ function loadQuery() {
     updateSearchBar(queryOptions.searchTerm);
     const url = makeSearchMovieUrl(queryOptions);
     if(!url) {
+        prompt.classList.remove('hidden');
+        movieContainer.classList.add('hidden');
         return;
+    } else {
+        prompt.classList.add('hidden');
+        movieContainer.classList.remove('hidden');
     }
+    
     fetch(url)
         .then(response => response.json())
         .then(result => {

@@ -28,6 +28,7 @@ ul {
 }
 
 li {
+    color: black;
     background-color: darkgrey;
     width: 40%;
     max-width: 180px;
@@ -59,4 +60,16 @@ li:hover {
 
 #form {
     text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+#prompt {
+    text-align: right;
+    color: white;
+    margin-right: 10px;
+    letter-spacing: .1em;
+    text-shadow: 0 0 2em rgb(255, 187, 0);
 }

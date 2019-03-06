@@ -17,14 +17,17 @@
             <input type="search" id="search-bar">
             <button>Yeet</button>
         </form>
-        <section>
-            <button id="previous-button">&lt; Previous</button>
-            <span id="current-page">1</span>
-            of
-            <span id="total-pages">42</span>
-            <button id="next-button">Next &gt;</button>
+        <p id="prompt">Yeet a search!</p>
+        <section id="movie-container" class="hidden">
+            <section>
+                <button id="previous-button">&lt; Previous</button>
+                <span id="current-page">1</span>
+                of
+                <span id="total-pages">42</span>
+                <button id="next-button">Next &gt;</button>
+            </section>
+            <ul id="movie-list"></ul>
         </section>
-        <ul id="movie-list"></ul>
     </main>
     
     <script type="module" src="src/index.js"></script>

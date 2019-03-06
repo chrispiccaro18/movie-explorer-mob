@@ -19,8 +19,15 @@ export function getYear(date) {
 const movieList = document.getElementById('movie-list');
 
 export default function loadMovieList(movies) {
+    clearList();
     movies.forEach(movie => {
         const dom = makeMovieCard(movie);
         movieList.appendChild(dom);
     });
+}
+
+function clearList() {
+    while(movieList.children.length > 0) {
+        movieList.lastElementChild.remove();
+    }
 }
